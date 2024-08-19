@@ -49,7 +49,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert('Your pin will be sent to your discord server after 24 hours! Make sure you filled the box correctly!');
+      alert('error! Make sute you filled the box correctly!');
     });
 });
 
