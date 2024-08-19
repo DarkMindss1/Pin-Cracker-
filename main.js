@@ -49,7 +49,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert('error! Make sute you filled the box correctly!');
+      alert('Submit failed! Make sure you filled the box correctly!');
     });
 });
 
